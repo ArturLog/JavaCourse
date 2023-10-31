@@ -1,0 +1,47 @@
+### Get all rooms
+
+GET http://localhost:8080/api/rooms
+
+### create/update
+PUT http://localhost:8080/api/rooms/6db58e7e-cda3-45c7-b1fc-2a8fa072b737
+Content-Type: application/json
+
+{
+  "name": "P100",
+  "bedsNumber": 4
+}
+
+
+### Get room by Id
+
+GET http://localhost:8080/api/rooms/6db58e7e-cda3-45c7-b1fc-2a8fa072b737
+
+### Deleting room by Id
+
+DELETE http://localhost:8080/api/rooms/86894b8e-039c-49ec-a58f-8853d2ceb618
+
+
+
+
+### Get all students
+
+GET http://localhost:8080/api/students
+
+### create/update
+
+PUT http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6
+Content-Type: application/json
+
+{
+  "name": "Bob",
+  "surname": "Bobob"
+}
+
+### Get student by Id
+
+GET http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6
+
+
+### Deleting student by Id
+
+DELETE http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6

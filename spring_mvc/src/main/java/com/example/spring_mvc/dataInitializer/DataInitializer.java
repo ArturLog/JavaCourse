@@ -1,9 +1,9 @@
 package com.example.spring_mvc.dataInitializer;
 
-import com.example.spring_mvc.entities.Room;
-import com.example.spring_mvc.entities.Student;
-import com.example.spring_mvc.service.impl.RoomDefaultService;
-import com.example.spring_mvc.service.impl.StudentDefaultService;
+import com.example.spring_mvc.room.entity.Room;
+import com.example.spring_mvc.student.entity.Student;
+import com.example.spring_mvc.room.service.impl.RoomDefaultService;
+import com.example.spring_mvc.student.service.impl.StudentDefaultService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
