@@ -11,6 +11,8 @@ Content-Type: application/json
   "bedsNumber": 4
 }
 
+### get students in room
+GET http://localhost:8080/api/rooms/050fdb6c-c0db-465f-815e-e48463a7cb82/students
 
 ### Get room by Id
 
@@ -29,7 +31,7 @@ GET http://localhost:8080/api/students
 
 ### create/update
 
-PUT http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6
+PUT http://localhost:8080/api/students/5f67a1ab-94bd-4be2-9957-444d5c623ce6
 Content-Type: application/json
 
 {

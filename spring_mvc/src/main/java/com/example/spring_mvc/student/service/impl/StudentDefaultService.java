@@ -47,6 +47,11 @@ public class StudentDefaultService implements StudentService {
     }
 
     @Override
+    public List<Student> findRoomStudents(UUID id) {
+        return repository.findAll().stream().filter(student -> student.getRoom().getId().equals(id)).toList();
+    }
+
+    @Override
     public void delete(UUID id) {
         repository.findById(id).ifPresent(repository::delete);
     }

@@ -46,4 +46,13 @@ public class StudentController {
         StudentService.delete(uuid);
         return ResponseEntity.accepted().build();
     }
+    @GetMapping("api/rooms/{id}/students")
+    public ResponseEntity<GetStudentsResponse> getStudentInRoom(@PathVariable("id") UUID uuid){
+        try{
+            return ResponseEntity.ok(GetStudentsResponse.builder().students(StudentService.findRoomStudents(uuid).stream().map(StudentMapper::StudentToStudentDto).toList()).build());
+        }
+        catch (Exception e){
+            throw new ResponseStatusException(NOT_FOUND, "Unable to find resource");
+        }
+    }
 }

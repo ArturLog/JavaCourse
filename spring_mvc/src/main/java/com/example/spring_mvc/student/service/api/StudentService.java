@@ -17,6 +17,7 @@ public interface StudentService {
     void create(Student student);
     void updateStudentById(UUID uuid, Student student);
 
+    List<Student> findRoomStudents(UUID id);
     void delete(UUID id);
     void delete(String name);
 }
