@@ -3,7 +3,7 @@
 GET http://localhost:8080/api/rooms
 
 ### create/update
-PUT http://localhost:8080/api/rooms/6db58e7e-cda3-45c7-b1fc-2a8fa072b737
+PUT http://localhost:8080/api/rooms/9f334f15-38c8-4e93-b7df-b5cdc267f8cd
 Content-Type: application/json
 
 {
@@ -12,15 +12,15 @@ Content-Type: application/json
 }
 
 ### get students in room
-GET http://localhost:8080/api/rooms/050fdb6c-c0db-465f-815e-e48463a7cb82/students
+GET http://localhost:8080/api/rooms/9f334f15-38c8-4e93-b7df-b5cdc267f8cd/students
 
 ### Get room by Id
 
-GET http://localhost:8080/api/rooms/6db58e7e-cda3-45c7-b1fc-2a8fa072b737
+GET http://localhost:8080/api/rooms/9f334f15-38c8-4e93-b7df-b5cdc267f8cd
 
 ### Deleting room by Id
 
-DELETE http://localhost:8080/api/rooms/86894b8e-039c-49ec-a58f-8853d2ceb618
+DELETE http://localhost:8080/api/rooms/9f334f15-38c8-4e93-b7df-b5cdc267f8cd
 
 
 
@@ -31,19 +31,20 @@ GET http://localhost:8080/api/students
 
 ### create/update
 
-PUT http://localhost:8080/api/students/5f67a1ab-94bd-4be2-9957-444d5c623ce6
+PUT http://localhost:8080/api/students/e16a8784-c95d-498a-8fb0-2f781e331553
 Content-Type: application/json
 
 {
   "name": "Bob",
-  "surname": "Bobob"
+  "surname": "Bobob",
+  "room": "03619986-6413-45d5-a98c-cc7d58cf0b28"
 }
 
 ### Get student by Id
 
-GET http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6
+GET http://localhost:8080/api/students/7ef19af6-7a39-482c-a6bb-871d3b5d8c9b
 
 
 ### Deleting student by Id
 
-DELETE http://localhost:8080/api/students/a27f2c25-081c-468a-aaa6-74ea793dbab6
+DELETE http://localhost:8080/api/students/e86157e9-d75e-4f31-aae5-76e2eb195cd0

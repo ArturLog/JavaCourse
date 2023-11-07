@@ -14,6 +14,7 @@ public interface StudentMapper {
     Student StudentDtoToStudent(StudentDto StudentDto);
     StudentDto StudentToStudentDto(Student Student);
     GetStudentResponse StudentToGetStudentResponse(Student Student);
+
     default Student putStudentRequestToStudent(UUID uuid, PutStudentRequest putStudentRequest) {
         if (putStudentRequest == null) {
             return null;
@@ -27,4 +28,5 @@ public interface StudentMapper {
                         .build())
                 .build();
     }
+
 }
