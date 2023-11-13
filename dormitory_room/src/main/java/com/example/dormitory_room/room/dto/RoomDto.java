@@ -1,7 +1,5 @@
 package com.example.dormitory_room.room.dto;
 
-import com.example.dormitory_room.student.dto.StudentDto;
-import com.example.dormitory_room.student.entity.Student;
 import lombok.*;
 import java.util.UUID;
 
