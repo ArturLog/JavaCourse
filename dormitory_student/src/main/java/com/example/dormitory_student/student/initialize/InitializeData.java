@@ -71,6 +71,12 @@ public class InitializeData implements InitializingBean {
                 .room(room3)
                 .build();
 
+        room1.addStudent(student1);
+        room2.addStudent(student2);
+        room3.addStudent(student3);
+        room3.addStudent(student4);
+
+
         studentService.create(student1);
         studentService.create(student2);
         studentService.create(student3);

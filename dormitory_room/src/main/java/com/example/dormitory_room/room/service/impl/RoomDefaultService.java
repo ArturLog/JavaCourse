@@ -42,7 +42,7 @@ public class RoomDefaultService implements RoomService {
     public void updateRoomById(UUID uuid, Room room) {
         room.setId(uuid);
         repository.save(room);
-        restRepository.create(uuid);
+        restRepository.create(uuid, room);
     }
 
     @Override

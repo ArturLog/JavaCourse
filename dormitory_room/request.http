@@ -1,9 +1,9 @@
 ### Get all rooms
 
-GET http://localhost:8080/api/rooms
+GET http://localhost:8082/api/rooms
 
 ### create/update
-PUT http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
+PUT http://localhost:8082/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f0aaa
 Content-Type: application/json
 
 {
@@ -12,15 +12,15 @@ Content-Type: application/json
 }
 
 ### get students in room
-GET http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
+GET http://localhost:8082/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
 
 ### Get room by Id
 
-GET http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
+GET http://localhost:8082/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
 
 ### Deleting room by Id
 
-DELETE http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
+DELETE http://localhost:8082/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
 
 
 

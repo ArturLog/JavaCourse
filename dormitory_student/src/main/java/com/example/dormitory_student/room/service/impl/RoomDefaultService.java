@@ -21,19 +21,9 @@ public class RoomDefaultService implements RoomService {
     }
 
     @Override
-    public Optional<Room> findByName(String name) {
-        return repository.findByName(name);
-    }
-
-    @Override
     public List<Room> findAll() {
         System.out.println(repository.findAll());
         return repository.findAll();
-    }
-
-    @Override
-    public void create(Room room) {
-        repository.save(room);
     }
 
     @Override
@@ -43,12 +33,13 @@ public class RoomDefaultService implements RoomService {
     }
 
     @Override
+    public void create(Room room) {
+        repository.save(room);
+    }
+
+    @Override
     public void delete(UUID id) {
         repository.deleteById(id);
     }
 
-    @Override
-    public void delete(String name) {
-        repository.findByName(name).ifPresent(repository::delete);
-    }
 }
