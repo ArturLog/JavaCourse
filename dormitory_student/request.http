@@ -1,0 +1,24 @@
+
+### Get all students
+
+GET http://localhost:8080/api/students
+
+### create/update
+
+PUT http://localhost:8080/api/students/f5875513-bf7b-4ae1-b8a5-5b70a1b90e76
+Content-Type: application/json
+
+{
+  "name": "Bob",
+  "surname": "Bobob",
+  "room": "ed6cfb2a-cad7-47dd-9b56-9d1e3c7a4197"
+}
+
+### Get student by Id
+
+GET http://localhost:8080/api/students/f5875513-bf7b-4ae1-b8a5-5b70a1b90e76
+
+
+### Deleting student by Id
+
+DELETE http://localhost:8080/api/students/f5875513-bf7b-4ae1-b8a5-5b70a1b90e76
