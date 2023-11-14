@@ -11,6 +11,9 @@ Content-Type: application/json
   "bedsNumber": 4
 }
 
+### Get room by id
+GET http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
+
 ### Deleting room by Id
 
 DELETE http://localhost:8080/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f00a6
