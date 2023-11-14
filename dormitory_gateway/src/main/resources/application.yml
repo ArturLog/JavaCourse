@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: room-route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/rooms/**
+        - id: student-route
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/students/**
