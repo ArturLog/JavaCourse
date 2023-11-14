@@ -26,6 +26,5 @@ public class RoomEventRestRepository implements RoomEventRepository {
     @Override
     public void create(UUID id, Room room){
         restTemplate.put("/api/rooms/{id}", room, id);
-        System.out.println("ASDASd");
     }
 }
