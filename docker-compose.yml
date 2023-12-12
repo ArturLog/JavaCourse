@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  dormitory_student:
+    image: dormitory_student:1.0.0
+    restart: always
+
+  dormitory_room:
+    image: dormitory_room:1.0.0
+    restart: always
+    environment:
+      RPG_CHARACTER_URL: "http://dormitory_room:8080"
+
+  dormitory_gateway:
+    image: dormitory_gateway:1.0.0
+    restart: always
+    environment:
+      DORMITORY_STUDENT_URL: "http://dormitory_student:8080"
+      DORMITORY_ROOM_URL: "http://dormitory_room:8080"
+      DORMITORY_GATEWAY_HOST: "dormitory_gateway:8080"
+
+  dormitory_angular:
+    image: dormitory_angular:1.0.0
+    restart: always
+    environment:
+      API_URL: http://dormitory_gateway:8080/api
+    ports:
+      - "8087:80"
