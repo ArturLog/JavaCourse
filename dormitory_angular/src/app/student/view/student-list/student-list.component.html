@@ -1,0 +1,35 @@
+<div class="container">
+  <div *ngIf="students" class="row">
+    <div class="col-md-12">
+      <div class='d-flex justify-content-between align-items-center mb-3'>
+        <h1>Students</h1>
+        <a [routerLink]="['/students', 'add']" class="btn btn-success">+</a>
+      </div>
+      <table class="table table-striped border text-center">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Room Id</th>
+            <th>Room Name</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students.students">
+            <td>{{student.id}}</td>
+            <td>{{student.room.id}}</td>
+            <td>{{student.room.name}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.surname}}</td>
+            <td>
+              <a [routerLink]="['/students', student.id, 'edit']" class="btn">Edit</a>
+              <button class="btn" (click)="onDelete(student.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
