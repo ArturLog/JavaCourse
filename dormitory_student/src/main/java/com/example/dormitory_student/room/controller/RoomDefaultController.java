@@ -30,7 +30,6 @@ public class RoomDefaultController {
 
     @PutMapping("api/rooms/{id}")
     public ResponseEntity<Void> putRoom(@PathVariable("id") UUID uuid, @RequestBody Room room){
-        //Room room = Room.builder().id(uuid).name("AAA").bedsNumber(5).build();
         roomService.updateRoomById(uuid, room);
         return ResponseEntity.accepted().build();
     }
