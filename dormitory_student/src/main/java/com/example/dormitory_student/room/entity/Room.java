@@ -26,7 +26,7 @@ public class Room implements Comparable<Room>{
     private UUID id;
 
     private String name;
-    private int bedsNumber;
+    private Integer bedsNumber;
 
     @Builder.Default
     @EqualsAndHashCode.Exclude

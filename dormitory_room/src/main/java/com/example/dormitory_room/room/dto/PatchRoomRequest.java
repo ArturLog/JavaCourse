@@ -11,5 +11,5 @@ import lombok.*;
 @EqualsAndHashCode
 public class PatchRoomRequest {
     private String name;
-    private int bedsNumber;
+    private Integer bedsNumber;
 }

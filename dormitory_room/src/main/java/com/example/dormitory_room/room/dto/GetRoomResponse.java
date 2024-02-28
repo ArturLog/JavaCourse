@@ -14,5 +14,5 @@ import java.util.UUID;
 public class GetRoomResponse {
     private UUID id;
     private String name;
-    private int bedsNumber;
+    private Integer bedsNumber;
 }

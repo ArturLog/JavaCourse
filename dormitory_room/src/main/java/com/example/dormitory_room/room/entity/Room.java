@@ -21,7 +21,7 @@ public class Room implements Comparable<Room>{
 
     private String name;
 
-    private int bedsNumber;
+    private Integer bedsNumber;
 
     @Override
     public int compareTo(Room o) {

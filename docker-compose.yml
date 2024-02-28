@@ -1,18 +1,24 @@
 version: '3'
 
 services:
-  dormitory_student:
-    image: dormitory_student:1.0.0
-    restart: always
-
   dormitory_room:
-    image: dormitory_room:1.0.0
+    build:
+      context: ./dormitory_room
+      dockerfile: Dockerfile
     restart: always
     environment:
-      RPG_CHARACTER_URL: "http://dormitory_room:8080"
+      DORMITORY_STUDENT_URL: "http://dormitory_student:8080"
+
+  dormitory_student:
+    build:
+      context: ./dormitory_student
+      dockerfile: Dockerfile
+    restart: always
 
   dormitory_gateway:
-    image: dormitory_gateway:1.0.0
+    build:
+      context: ./dormitory_gateway
+      dockerfile: Dockerfile
     restart: always
     environment:
       DORMITORY_STUDENT_URL: "http://dormitory_student:8080"
@@ -20,9 +26,11 @@ services:
       DORMITORY_GATEWAY_HOST: "dormitory_gateway:8080"
 
   dormitory_angular:
-    image: dormitory_angular:1.0.0
+    build:
+      context: ./dormitory_angular
+      dockerfile: Dockerfile
     restart: always
     environment:
       API_URL: http://dormitory_gateway:8080/api
     ports:
-      - "8087:80"
+      - "8083:80"

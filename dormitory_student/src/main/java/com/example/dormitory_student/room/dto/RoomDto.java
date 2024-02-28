@@ -13,5 +13,5 @@ import java.util.UUID;
 public class RoomDto {
     private UUID id;
     private String name;
-    private int bedsNumber;
+    private Integer bedsNumber;
 }

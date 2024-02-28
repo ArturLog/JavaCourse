@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+  student-db:
+    image: postgres:16.1
+    restart: always
+    environment:
+      POSTGRES_DB: "student-db"
+      POSTGRES_USER: "student_user"
+      POSTGRES_PASSWORD: "student_password"
+    volumes:
+      - student-db-data:/var/lib/postgresql/data
+
+  room-db:
+    image: postgres:16.1
+    restart: always
+    environment:
+      POSTGRES_DB: "room-db"
+      POSTGRES_USER: "room_user"
+      POSTGRES_PASSWORD: "room_password"
+    volumes:
+      - room-db-data:/var/lib/postgresql/data
+
+  dormitory-room:
+    build:
+      context: ./dormitory_room
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://room-db:5432/room-db"
+      SPRING_DATASOURCE_DRIVERCLASSNAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_USERNAME: "room_user"
+      SPRING_DATASOURCE_PASSWORD: "room_password"
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+
+
+  dormitory-student:
+    build:
+      context: ./dormitory_student
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      ROOM_URL: "http://dormitory-room:8080"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://student-db:5432/student-db"
+      SPRING_DATASOURCE_DRIVERCLASSNAME: "org.postgresql.Driver"
+      SPRING_DATASOURCE_USERNAME: "student_user"
+      SPRING_DATASOURCE_PASSWORD: "student_password"
+      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+
+  dormitory-gateway:
+    build:
+      context: ./dormitory_gateway
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      DORMITORY_STUDENT_URL: "http://dormitory-student:8080"
+      DORMITORY_ROOM_URL: "http://dormitory-room:8080"
+      DORMITORY_GATEWAY_HOST: "dormitory-gateway"
+
+  dormitory-angular:
+    build:
+      context: ./dormitory_angular
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      API_URL: http://dormitory-gateway:8080/api
+    ports:
+      - "8083:80"
+
+volumes:
+  student-db-data:
+  room-db-data:

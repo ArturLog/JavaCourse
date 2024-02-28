@@ -1,6 +1,6 @@
 ### Get all rooms
 
-GET http://localhost:8082/api/rooms
+GET http://localhost:8084/api/rooms
 
 ### create/update
 PUT http://localhost:8082/api/rooms/c4804e0f-769e-4ab9-9ebe-0578fb4f0aaa
